@@ -1,0 +1,45 @@
+<div class="box half-box">
+	<div class="header">
+		<h2>Add Wine</h2>
+		<!--End .header-->
+	</div>
+	<div class="content padding">
+		<form>
+			<fieldset>
+				<legend>New Wine</legend>
+				<div class="field">
+					<label>The name on the bottle?</label>
+					<input type="text" class="large" id="wine-main-input" />
+					<label class="help">7 Deadly Zins</label>
+					<div class="completer">
+						<ul class="empty">
+						</ul>
+					</div>	
+				</div>
+				<div class="field">
+					<label>Got any photos?</label>
+					<input type="file"/>
+				</div>
+				<div class="field">
+					<label>Any thoughts?:</label>
+					<textarea rows="7" cols="50" ></textarea>
+					<label class="help">It had a lovely bouquet, and matched excellently with lambracks on herbs...</label>
+					</div>
+					<button>Submit</button>or
+					<a href="/">cancel</a>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+
+<% content_for :script_files do %>
+	<script src="/plugins/winesearcher.jquery.js" type="text/javascript"></script>
+<% end %>
+
+<% content_for :page_script do %>
+	$(function(){
+		$("#wine-main-input").winesearch({
+			url:'<%= completer_wines_path %>'
+		});
+	});
+<% end %>

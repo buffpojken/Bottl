@@ -1,0 +1,32 @@
+<div id="header"> 
+	<!--Container-->
+	<div class="container clearfix"> 
+		<!--Logo--> 
+		<img id="logo" src="/images/logo.png" alt="logo" /> 
+		<!--Menu-->
+		<ul id="menu" class="clearfix">
+			<li>
+				<a href="<%= home_path %>">Daniel Sundström</a>
+			</li>
+			<li>
+				<a href="<%= logout_path %>">Logout</a>
+			</li>
+		</ul>
+		<!--Navigation-->
+		<ul class="clearfix" id="navigation">
+			<li class="<%= selected_tab('home') %>">
+				<a href="/">
+					Home
+				</a>
+			</li>
+			<li class="<%= selected_tab('wines') %>">
+				<a class="" href="<%= new_wine_path %>">
+					Add wine
+				</a>
+			</li>
+			<li class="separator"></li>
+		</ul>
+		<!--end container--> 
+	</div>
+	<!--end #header--> 
+</div>

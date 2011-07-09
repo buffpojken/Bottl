@@ -14,7 +14,8 @@ module Bottle
 
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)
-
+    config.autoload_paths += %W(#{Rails.root}/lib)
+    
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
     # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
@@ -32,6 +33,8 @@ module Bottle
 
     # JavaScript files you want as :defaults (application.js is always included).
     config.action_view.javascript_expansions[:defaults] = %w()
+    
+    config.active_record.include_root_in_json = false
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
